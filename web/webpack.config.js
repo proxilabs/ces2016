@@ -11,6 +11,8 @@ module.exports = {
         ],
         html: './src/index.html'
     },
+    resolve: { fallback: path.join(__dirname, "node_modules") },
+    resolveLoader: { fallback: path.join(__dirname, "node_modules") }, 
     output: {
         path: path.join(__dirname, 'dist'),
         filename: 'app.bundle.js'
