@@ -1,3 +1,7 @@
-const test = 'Hello, world';
+import parse from './parser';
+import createStore from './store';
 
-export default test;
+export default {
+  parse,
+  createStore,
+};
