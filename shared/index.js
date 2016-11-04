@@ -59,6 +59,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	exports.createStore = exports.parse = undefined;
 
 	var _parser = __webpack_require__(1);
 
@@ -70,10 +71,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	exports.default = {
-	  parse: _parser2.default,
-	  createStore: _store2.default
-	};
+	exports.parse = _parser2.default;
+	exports.createStore = _store2.default;
 
 /***/ },
 /* 1 */
@@ -98,10 +97,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 
 	exports.default = function () {
-	  return (0, _redux.createStore)();
+	  return (0, _redux.createStore)(dummyReducer);
 	};
 
 	var _redux = __webpack_require__(3);
+
+	var dummyReducer = function dummyReducer() {
+	  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+	  return state;
+	};
+
+	/**
+	 * Crée le store de notre application.
+	 */
 
 /***/ },
 /* 3 */
