@@ -1,0 +1,22 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "Code web pour la démo du ces2016",
+  "author": "Julien Leicher, Quentin Bisson",
+  "license": "ISC",
+  "scripts": {
+    "start": "node src/dev_server.js"
+  },
+  "dependencies": {
+    "shared": "./../shared"
+  },
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.7",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "file-loader": "^0.9.0",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
