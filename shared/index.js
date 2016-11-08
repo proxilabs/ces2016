@@ -59,6 +59,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	exports.createStore = exports.parse = undefined;
 
 	var _parser = __webpack_require__(1);
 
@@ -70,10 +71,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	exports.default = {
-	  parse: _parser2.default,
-	  createStore: _store2.default
-	};
+	exports.parse = _parser2.default;
+	exports.createStore = _store2.default;
 
 /***/ },
 /* 1 */
@@ -85,7 +84,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
-	exports.default = function (url) {};
+	exports.default = function (url) {
+	  alert(url);
+	};
 
 /***/ },
 /* 2 */
