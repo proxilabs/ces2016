@@ -17,3 +17,4 @@ Ensuite, il vous suffit de lancer les commandes `npm install` et `npm start` dan
 - `shared/`: Code commun sous forme de **package npm** et importé depuis les autres packages,
 - `web/`: Code spécifique à la version web,
 - `mobile/`: Code source de l'application mobile sous React Native.
+- `server/`: Code source pour le serveur de la démo.

@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const buffer = require('buffer').Buffer;
 
 module.exports = {
   entry: {
@@ -11,7 +12,9 @@ module.exports = {
     ],
     html: './src/index.html',
   },
-  resolve: { fallback: path.join(__dirname, 'node_modules') },
+  resolve: {
+    fallback: path.join(__dirname, 'node_modules'),
+  },
   resolveLoader: { fallback: path.join(__dirname, 'node_modules') },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -29,5 +32,9 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.ProvidePlugin({
+      Buffer: 'buffer',
+      'window.Buffer': 'buffer'
+    }),
   ],
 };
