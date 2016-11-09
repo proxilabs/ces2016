@@ -1,15 +1,16 @@
 {
-  "name": "shared",
+  "name": "server",
   "version": "1.0.0",
-  "description": "Code partagé pour la démo du ces2016",
+  "description": "Code du serveur pour la démo du ces2016",
   "author": "Julien Leicher, Quentin Bisson",
   "license": "ISC",
   "scripts": {
-    "start": "webpack --progress --colors --watch",
-    "test": "jest"
+    "start": "webpack && node index.js",
+    "watch": "webpack --progress --colors --watch"
   },
   "dependencies": {
-    "redux": "^3.6.0",
+    "feedme": "^0.3.2",
+    "express": "^4.14.0",
     "isomorphic-fetch": "^2.2.1"
   },
   "devDependencies": {
@@ -21,8 +22,6 @@
     "eslint-plugin-import": "^1.16.0",
     "eslint-plugin-jsx-a11y": "^2.2.2",
     "eslint-plugin-react": "^6.3.0",
-    "jest": "^17.0.0",
-    "webpack": "^1.13.3",
-    "webpack-dev-server": "^1.16.2"
+    "webpack": "^1.13.3"
   }
 }

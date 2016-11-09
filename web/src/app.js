@@ -1,7 +1,9 @@
 import React from 'react';
 import { render } from 'react-dom';
-import test from 'shared';
+import { parse } from 'shared';
 
-const App = () => <h1>{test}</h1>;
+const App = () => (
+  <h1>Hello</h1>
+);
 
 render(<App />, document.getElementById('root'));
