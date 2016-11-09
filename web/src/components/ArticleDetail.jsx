@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { connect } from 'react-redux';
+
 const ArticleDetail =
     ({ params: { articleId } }) => (
       <div>
@@ -7,4 +9,4 @@ const ArticleDetail =
       </div>
     );
 
-export default ArticleDetail;
+export default connect()(ArticleDetail);
