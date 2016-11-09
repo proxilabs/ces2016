@@ -16,7 +16,7 @@ const articleReducer = (state = initialState, action) => {
     case 'SEARCH_ARTICLES_ERROR':
       return {
         ...state,
-        error: action.error, 
+        error: action.error,
       };
     default:
       return state;
