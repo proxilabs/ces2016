@@ -1,11 +1,11 @@
 import React from 'react';
 
 import { connect } from 'react-redux';
-
+import { Actions } from 'react-native-router-flux';
 import {
     Text,
     TouchableOpacity,
-    View
+    View,
 } from 'react-native';
 
 function mapStateToProps(state, props) {
@@ -14,7 +14,7 @@ function mapStateToProps(state, props) {
   };
 }
 
-//TODO add real links
+// TODO add real links
 
 const ArticleDetail =
     ({ article: { title, link: { href }, updated, summary, author: { name, uri } } }) => (
@@ -32,8 +32,7 @@ const ArticleDetail =
           <Text>Sommaire : </Text>
           <Text>{summary}</Text>
         </View>
-        <TouchableOpacity onPress={Actions.home}>
-        </TouchableOpacity>
+        <TouchableOpacity onPress={Actions.home} />
       </View>
     );
 

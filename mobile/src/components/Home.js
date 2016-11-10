@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { 
+import {
     ScrollView,
-    Text
+    Text,
 } from 'react-native';
 
 import SearchArticle from './SearchArticle';
@@ -10,7 +10,7 @@ import ArticleList from './ArticleList';
 
 const Home =
     () => (
-      <ScrollView>
+      <ScrollView style={{ flex: 1, marginTop: 64 }}>
         <Text>Rechercher un flux RSS</Text>
 
         <SearchArticle />

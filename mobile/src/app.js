@@ -2,7 +2,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { Scene, Router } from 'react-native-router-flux';
-import { StatusBar } from 'react-native';
+import { StatusBar, View } from 'react-native';
 
 import { createStore } from 'shared';
 
@@ -22,13 +22,15 @@ export default function run() {
   // On encapsule notre composant racine dans le Provider pour passage du store en tant que contexte
   const App = () => (
     <Provider store={store}>
-      <StatusBar backgroundColor="transparent" animated translucent barStyle="light-content" />
-      <Router>
-        <Scene key="root">
-          <Scene key="home" initial component={Home} title="Feed RSS" />
-          <Scene key="articledetail" component={ArticleDetail} title="Article" />
-        </Scene>
-      </Router>
+      <View style={{ flex: 1 }}>
+        <StatusBar backgroundColor="transparent" animated translucent barStyle="dark-content" />
+        <Router>
+          <Scene key="root">
+            <Scene key="home" initial component={Home} title="Feed RSS" />
+            <Scene key="articledetail" component={ArticleDetail} title="Article" />
+          </Scene>
+        </Router>
+      </View>
     </Provider>
     );
 

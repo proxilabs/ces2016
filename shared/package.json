@@ -6,11 +6,11 @@
   "license": "ISC",
   "scripts": {
     "start": "webpack --progress --colors --watch",
+    "build": "webpack",
     "test": "jest"
   },
   "dependencies": {
-    "redux": "^3.6.0",
-    "isomorphic-fetch": "^2.2.1"
+    "redux": "^3.6.0"
   },
   "devDependencies": {
     "babel-core": "^6.18.2",
