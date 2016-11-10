@@ -9,4 +9,10 @@ const ArticleDetail =
       </div>
     );
 
+ArticleDetail.propTypes = {
+  params: React.PropTypes.shape({
+    articleId: React.PropTypes.number,
+  }),
+};
+
 export default connect()(ArticleDetail);
