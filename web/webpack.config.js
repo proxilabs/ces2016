@@ -8,7 +8,7 @@ module.exports = {
             // 'babel-polyfill',
       'webpack-dev-server/client?http://0.0.0.0:3000', // WebpackDevServer host and port
       'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
-      './src/app.jsx',
+      './src/app.js',
     ],
     html: './src/index.html',
   },
@@ -34,7 +34,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.ProvidePlugin({
       Buffer: 'buffer',
-      'window.Buffer': 'buffer'
+      'window.Buffer': 'buffer',
     }),
   ],
 };

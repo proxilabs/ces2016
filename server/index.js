@@ -58,9 +58,15 @@
 
 	var _isomorphicFetch2 = _interopRequireDefault(_isomorphicFetch);
 
+	var _cors = __webpack_require__(4);
+
+	var _cors2 = _interopRequireDefault(_cors);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var app = (0, _express2.default)();
+
+	app.use((0, _cors2.default)());
 
 	app.get('/', function (req, res) {
 	  if (!req.query.url) {
@@ -82,8 +88,8 @@
 	  }
 	});
 
-	app.listen(3000, function () {
-	  return console.info('Listening on port 3000');
+	app.listen(3001, function () {
+	  return console.info('Listening on port 3001');
 	});
 
 /***/ },
@@ -103,6 +109,12 @@
 /***/ function(module, exports) {
 
 	module.exports = require("isomorphic-fetch");
+
+/***/ },
+/* 4 */
+/***/ function(module, exports) {
+
+	module.exports = require("cors");
 
 /***/ }
 /******/ ]);

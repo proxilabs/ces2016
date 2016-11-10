@@ -5,10 +5,10 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 import { createStore } from 'shared';
 
-import App from './components/App.jsx';
-import Home from './components/Home.jsx';
-import ArticleDetail from './components/ArticleDetail.jsx';
-import NoMatch from './components/NoMatch.jsx';
+import App from './components/App';
+import Home from './components/Home';
+import ArticleDetail from './components/ArticleDetail';
+import NoMatch from './components/NoMatch';
 
 const store = createStore();
 

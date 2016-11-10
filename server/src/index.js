@@ -1,8 +1,11 @@
 import express from 'express';
 import FeedMe from 'feedme';
 import fetch from 'isomorphic-fetch';
+import cors from 'cors';
 
 const app = express();
+
+app.use(cors());
 
 app.get('/', (req, res) => {
   if (!req.query.url) {
@@ -21,4 +24,4 @@ app.get('/', (req, res) => {
   }
 });
 
-app.listen(3000, () => console.info('Listening on port 3000'));
+app.listen(3001, () => console.info('Listening on port 3001'));

@@ -1,5 +1,11 @@
 import * as actions from './actionTypes';
 
+export function fetchArticlesRequest() {
+  return {
+    type: actions.FETCH_ARTICLES_REQUEST,
+  };
+}
+
 
 export function fetchArticlesSuccess(feed) {
   return {
@@ -17,6 +23,7 @@ export function fetchArticlesError(error) {
 
 export function updateUrlValue(event) {
   return {
+    type: actions.UPDATE_URL_VALUE,
     url: event.target.value,
   };
 }

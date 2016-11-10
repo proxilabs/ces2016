@@ -7,19 +7,24 @@ const initialState = {
   url: '',
 };
 
-const articleReducer = (state = initialState, action) => {
+const article = (state = initialState, action) => {
   switch (action.type) {
+    case actions.FETCH_ARTICLES_REQUEST:
+      return {
+        ...state,
+        error: undefined,
+        isFetching: true,
+      };
     case actions.FETCH_ARTICLES_SUCCESS:
       return {
         ...state,
         articles: action.feed.items,
-        error: undefined,
         isFetching: false,
       };
     case actions.FETCH_ARTICLES_ERROR:
       return {
         ...state,
-        error: action.error,
+        error: action.error.message,
         isFetching: false,
       };
     case actions.UPDATE_URL_VALUE:
@@ -32,4 +37,4 @@ const articleReducer = (state = initialState, action) => {
   }
 };
 
-export default articleReducer;
+export default article;

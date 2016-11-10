@@ -2,8 +2,8 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 
-import SearchArticle from './SearchArticle.jsx';
-import ArticleList from './ArticleList.jsx';
+import SearchArticle from './SearchArticle';
+import ArticleList from './ArticleList';
 
 const Home =
     () => (
