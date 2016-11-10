@@ -5,6 +5,7 @@ import { actions, parse } from 'shared';
 
 import {
     Button,
+    Text,
     TextInput,
     View,
 } from 'react-native';
@@ -22,10 +23,10 @@ function mapStateToProps(state) {
 const SearchArticle =
     ({ url, isFetching, error, dispatch }) => (
       <View>
-          {error ? <Text>{error}</Text> : null}
-          <TextInput style={{ height: 36 }} returnKeyType="next" value={url} onChange={event => dispatch(actions.updateUrlValue(event.nativeEvent.text))} />
-          <Button onPress={() => parse(url, dispatch)} title="Rechercher" disabled={isFetching || !url} />
-        </View>
+        {error ? <Text>{error}</Text> : null}
+        <TextInput style={{ height: 36 }} returnKeyType="done" value={url} onChange={event => dispatch(actions.updateUrlValue(event.nativeEvent.text))} />
+        <Button onPress={() => parse(url, dispatch)} title="Rechercher" disabled={isFetching || !url} />
+      </View>
     );
 
 

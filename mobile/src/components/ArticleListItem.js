@@ -11,9 +11,9 @@ import {
 
 const ArticleListItem =
     article => (
-      <TouchableOpacity onPress={Actions.articledetail(article.id)}>
-          <Text>{article.name} ></Text>
-        </TouchableOpacity>
+      <TouchableOpacity onPress={() => Actions.articledetail({ articleId: article.id })}>
+          <Text>{article.title} ></Text>
+      </TouchableOpacity>
     );
 
 export default ArticleListItem;

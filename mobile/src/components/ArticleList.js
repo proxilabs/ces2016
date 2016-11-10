@@ -22,7 +22,7 @@ const ArticleList =
     ({ articles }) => (
       <ListView
         dataSource={createDatasource(articles)}
-        renderRow={article => <ArticleListItem article={article} />}
+        renderRow={article => <ArticleListItem {...article} />}
       />
     );
 

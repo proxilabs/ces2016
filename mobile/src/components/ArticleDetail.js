@@ -8,9 +8,11 @@ import {
     View,
 } from 'react-native';
 
+import { web } from 'react-native-communications';
+
 function mapStateToProps(state, props) {
   return {
-    article: state.articles.find(a => a.id === props.params.articleId) || {},
+    article: state.articles.find(a => a.id === props.navigationState.articleId) || {},
   };
 }
 
@@ -19,10 +21,14 @@ function mapStateToProps(state, props) {
 const ArticleDetail =
     ({ article: { title, link: { href }, updated, summary, author: { name, uri } } }) => (
       <View>
-        <Text>{title} ({href})</Text>
+        <TouchableOpacity onPress={() => web(href)}>
+          <Text>{title}</Text>
+        </TouchableOpacity>
         <View>
           <Text>Auteur : </Text>
-          <Text>{name} ({uri})</Text>
+          <TouchableOpacity onPress={() => web(uri)}>
+            <Text>{name}</Text>
+          </TouchableOpacity>
         </View>
         <View>
           <Text>Date de mise à jour : </Text>
@@ -32,7 +38,9 @@ const ArticleDetail =
           <Text>Sommaire : </Text>
           <Text>{summary}</Text>
         </View>
-        <TouchableOpacity onPress={Actions.home} />
+        <TouchableOpacity onPress={Actions.home}>
+          <Text>Retour</Text>
+        </TouchableOpacity>
       </View>
     );
 
