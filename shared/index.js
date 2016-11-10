@@ -92,6 +92,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	
 	exports.default = function (url, dispatch) {
+	  dispatch((0, _actions.fetchArticlesRequest)());
 	  return new Promise(function () {
 	    console.info('Fetching feeds for ' + url);
 	
@@ -99,9 +100,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    fetch('http://localhost:3001/?url=' + url).then(function (r) {
 	      return r.json();
 	    }).then(function (feed) {
-	      return dispatch(_actions.actions.fetchArticlesSuccess(feed));
+	      return dispatch((0, _actions.fetchArticlesSuccess)(feed));
 	    }).catch(function (error) {
-	      return dispatch(_actions.actions.fetchArticlesError(error));
+	      return dispatch((0, _actions.fetchArticlesError)(error));
 	    });
 	  });
 	};
