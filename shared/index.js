@@ -91,21 +91,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
-	exports.default = function (url) {
-	  return new Promise(function (resolve, reject) {
+	exports.default = function (url, dispatch) {
+	  return new Promise(function () {
 	    console.info('Fetching feeds for ' + url);
 
 	    (0, _isomorphicFetch2.default)('http://localhost:3001/?url=' + url).then(function (r) {
 	      return r.json();
-	    }).then(function (data) {
-	      resolve(data);
-	    }).catch(reject);
+	    }).then(function (feed) {
+	      return dispatch(_actions.actions.fetchArticlesSuccess(feed));
+	    }).catch(function (error) {
+	      return dispatch(_actions.actions.fetchArticlesError(error));
+	    });
 	  });
 	};
 
 	var _isomorphicFetch = __webpack_require__(2);
 
 	var _isomorphicFetch2 = _interopRequireDefault(_isomorphicFetch);
+
+	var _actions = __webpack_require__(29);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1911,10 +1915,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	  };
 	}
 
-	function updateUrlValue(event) {
+	function updateUrlValue(url) {
 	  return {
 	    type: actions.UPDATE_URL_VALUE,
-	    url: event.target.value
+	    url: url
 	  };
 	}
 
