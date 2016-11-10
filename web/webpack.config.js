@@ -12,6 +12,7 @@ module.exports = {
     ],
     html: './src/index.html',
   },
+  devtool: 'source-map',
   resolve: {
     fallback: path.join(__dirname, 'node_modules'),
   },

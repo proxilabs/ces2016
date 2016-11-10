@@ -2,12 +2,14 @@ import React from 'react';
 import { render } from 'react-dom';
 import HeroClicker from './HeroClicker';
 import HelloWorld from './HelloWorld';
+import ReduxComponent from './ReduxSample';
 
 const App = () => (
   <div>
     <h1>Exemples</h1>
     <HeroClicker />
     <HelloWorld />
+    <ReduxComponent />
   </div>
 )
 
