@@ -12,18 +12,18 @@ function mapStateToProps(state) {
   };
 }
 
-const dataSource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+const dataSource = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
 
 function createDatasource(articles) {
-    return dataSource.cloneWithRows(articles.slice()),
+  return dataSource.cloneWithRows(articles.slice());
 }
 
 const ArticleList =
     ({ articles }) => (
-        <ListView
-            dataSource={createDatasource(articles)}
-            renderRow={(article) => <ArticleListItem article="article"/>}
-        />
+      <ListView
+        dataSource={createDatasource(articles)}
+        renderRow={article => <ArticleListItem article={article} />}
+      />
     );
 
 ArticleList.propTypes = {

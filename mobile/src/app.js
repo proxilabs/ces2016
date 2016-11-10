@@ -14,23 +14,23 @@ const store = createStore();
 
 /**
  * Lance l'application RN.
- * 
+ *
  * @export
  * @returns Bootstrap l'application React Native
  */
 export default function run() {
-    // On encapsule notre composant racine dans le Provider pour passage du store en tant que contexte
-    const App = () => (
-        <Provider store={store}>
-            <StatusBar backgroundColor="transparent" animated translucent barStyle="light-content" />
-            <Router>
-                <Scene key="root">
-                    <Scene key="home" initial component={Home} title="Feed RSS"/>
-                    <Scene key="articledetail" component={ArticleDetail} title="Article"/>
-                </Scene>
-            </Router>
-        </Provider>
+  // On encapsule notre composant racine dans le Provider pour passage du store en tant que contexte
+  const App = () => (
+    <Provider store={store}>
+      <StatusBar backgroundColor="transparent" animated translucent barStyle="light-content" />
+      <Router>
+        <Scene key="root">
+          <Scene key="home" initial component={Home} title="Feed RSS" />
+          <Scene key="articledetail" component={ArticleDetail} title="Article" />
+        </Scene>
+      </Router>
+    </Provider>
     );
 
-    return () => App; 
+  return () => App;
 }
