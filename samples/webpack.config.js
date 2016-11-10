@@ -14,6 +14,7 @@ module.exports = {
   resolve: {
     fallback: path.join(__dirname, 'node_modules'),
   },
+  devtool: 'source-map',
   resolveLoader: { fallback: path.join(__dirname, 'node_modules') },
   output: {
     path: path.join(__dirname, 'dist'),
