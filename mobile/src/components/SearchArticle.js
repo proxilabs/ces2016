@@ -5,6 +5,7 @@ import { actions, parse } from 'shared';
 
 import {
     Button,
+    StyleSheet,
     Text,
     TextInput,
     View,
@@ -19,12 +20,19 @@ function mapStateToProps(state) {
   };
 }
 
+const styles = StyleSheet.create({
+  input: {
+    height: 52,
+    fontSize: 16,
+  },
+});
+
 // TODO add loader
 const SearchArticle =
     ({ url, isFetching, error, dispatch }) => (
       <View>
         {error ? <Text>{error}</Text> : null}
-        <TextInput style={{ height: 36 }} returnKeyType="done" value={url} onChange={event => dispatch(actions.updateUrlValue(event.nativeEvent.text))} />
+        <TextInput style={styles.input} returnKeyType="done" value={url} onChange={event => dispatch(actions.updateUrlValue(event.nativeEvent.text))} />
         <Button onPress={() => parse(url, dispatch)} title="Rechercher" disabled={isFetching || !url} />
       </View>
     );

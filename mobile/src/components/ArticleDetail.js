@@ -3,6 +3,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 import {
+    ScrollView,
+    StyleSheet,
     Text,
     TouchableOpacity,
     View,
@@ -16,11 +18,18 @@ function mapStateToProps(state, props) {
   };
 }
 
-// TODO add real links
+const styles = StyleSheet.create({
+  view: {
+    flex: 1,
+    marginTop: 64,
+    marginLeft: 16,
+    marginRight: 16,
+  },
+});
 
 const ArticleDetail =
     ({ article: { title, link: { href }, updated, summary, author: { name, uri } } }) => (
-      <View>
+      <ScrollView style={styles.view}>
         <TouchableOpacity onPress={() => web(href)}>
           <Text>{title}</Text>
         </TouchableOpacity>
@@ -38,10 +47,10 @@ const ArticleDetail =
           <Text>Sommaire : </Text>
           <Text>{summary}</Text>
         </View>
-        <TouchableOpacity onPress={Actions.home}>
+        <TouchableOpacity onPress={() => Actions.home()}>
           <Text>Retour</Text>
         </TouchableOpacity>
-      </View>
+      </ScrollView>
     );
 
 ArticleDetail.propTypes = {
