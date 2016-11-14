@@ -8,7 +8,6 @@
     "start": "node src/dev_server.js"
   },
   "dependencies": {
-    "buffer": "^5.0.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-redux": "^4.4.5",
