@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import HeroClicker from './HeroClicker';
 import HelloWorld from './HelloWorld';
-import ReduxComponent from './ReduxSample';
+import ReduxSample from './redux-samples/app';
 import Button1 from './Button1';
 import Button1Func from './Button1Func';
 import Button2 from './Button2';
@@ -42,7 +42,7 @@ const App = () => (
     <Site />
     <HeroClicker />
     <HelloWorld />
-    <ReduxComponent />
+    <ReduxSample />
   </div>
 );
 
