@@ -21,9 +21,9 @@ export function fetchArticlesError(error) {
   };
 }
 
-export function updateUrlValue(event) {
+export function updateUrlValue(url) {
   return {
     type: actions.UPDATE_URL_VALUE,
-    url: event.target.value,
+    url,
   };
 }

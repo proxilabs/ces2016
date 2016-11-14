@@ -14,12 +14,7 @@ function stateToProps(state) {
 
 function handleSubmit(event, dispatch, url) {
   event.preventDefault(); // Stop form submit
-
-  parse(url)
-    .then(feed => dispatch(actions.fetchArticlesSuccess(feed)))
-    .catch(error => dispatch(actions.fetchArticlesError(error)));
-
-  dispatch(actions.fetchArticlesRequest());
+  parse(url, dispatch);
 }
 
 // TODO add loader
@@ -28,7 +23,7 @@ const SearchArticle =
     ({ url, isFetching, error, dispatch }) => (
       <form onSubmit={e => handleSubmit(e, dispatch, url)}>
         {error ? <span className="error">{error}</span> : null}
-        <input type="text" autoFocus value={url} onChange={e => dispatch(actions.updateUrlValue(e))} />
+        <input type="text" autoFocus value={url} onChange={event => dispatch(actions.updateUrlValue(event.target.value))} />
         <button type="submit" disabled={isFetching || !url}>Rechercher</button>
       </form>
     );
