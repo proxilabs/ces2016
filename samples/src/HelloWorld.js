@@ -4,18 +4,18 @@ import React, { Component } from 'react';
  * Un composant stateless.
  * Ici, le composant ne posséde aucun état interne. Il se sert uniquement
  * des propriétés qui lui sont passées pour afficher un message de salutations.
- * 
+ *
  * On utilise ici les "Arrow Functions" propre à l'ES2015 pour avoir quelque chose de très concis.
  */
 const Greetings = props => (
   <p>Hello, {props.name}!</p>
-)
+);
 
 /**
  * Ce qui revient à ceci, tout simplement.
  */
 function GreetingsAsFunc(props) {
-  return <p>Hello again, {props.name}!</p>
+  return <p>Hello again, {props.name}!</p>;
 }
 
 /**
@@ -32,17 +32,17 @@ class HelloWorld extends Component {
   // https://facebook.github.io/react/docs/react-component.html#the-component-lifecycle
   componentWillMount() {}
   componentDidMount() {}
-  componentWillUnmount() {}
   componentWillReceiveProps(nextProps) {}
+  componentWillUnmount() {}
 
   updateText(event) {
-    this.setState({ text: event.target.value })
+    this.setState({ text: event.target.value });
   }
 
   // La méthode render doit retourner un composant React valide.
   render() {
     // Ici on peut accéder aux propriétés du composant passées par les parents
-    console.info('Propriétés', this.props);    
+    console.info('Propriétés', this.props);
     // Et à son état interne
     console.info('Etat', this.state);
 
