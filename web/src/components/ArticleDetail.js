@@ -11,21 +11,23 @@ function mapStateToProps(state, props) {
 
 const ArticleDetail =
     ({ article: { title, link: { href }, updated, summary, author: { name, uri } } }) => (
-      <div>
-        <h1><a href={href} rel="noopener noreferrer" target="_blank">{title}</a></h1>
-        <div>
+      <div className="app__content article">
+        <Link to="/">Retour</Link>
+        <h1 className="article__title">
+          <a href={href} rel="noopener noreferrer" target="_blank">{title}</a>
+        </h1>
+        <div className="article__meta">
           <span>Auteur : </span>
           <span><a href={uri} rel="noopener noreferrer" target="_blank">{name}</a></span>
         </div>
-        <div>
+        <div className="article__meta">
           <span>Date de mise à jour : </span>
           <span>{updated}</span>
         </div>
-        <div>
-          <span>Sommaire : </span>
+        <div className="article__summary">
+          <span>Résumé : </span>
           <span>{summary}</span>
         </div>
-        <Link to="/">Retour</Link>
       </div>
     );
 

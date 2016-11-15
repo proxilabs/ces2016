@@ -11,15 +11,17 @@ function mapStateToProps(state) {
 
 const ArticleList =
     ({ articles }) => (
-      <ul className="articles">
-        {
-            articles.map(article => (
-              <li key={article.id} className="articles__item">
-                <Link to={`/article/${encodeURIComponent(article.id)}`}>{article.title}</Link>
-              </li>
-            ))
-        }
-      </ul>
+      articles.length > 0 ?
+        <ul className="articles">
+          {
+              articles.map(article => (
+                <li key={article.id} className="articles__item">
+                  <Link to={`/article/${encodeURIComponent(article.id)}`}>{article.title}</Link>
+                </li>
+              ))
+          }
+        </ul>
+      : null
     );
 
 ArticleList.propTypes = {
