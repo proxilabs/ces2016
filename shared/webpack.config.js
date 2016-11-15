@@ -13,4 +13,7 @@ module.exports = {
       loader: 'babel-loader',
     }],
   },
+  node: {
+    global: false,
+  },
 };

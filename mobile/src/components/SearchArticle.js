@@ -21,19 +21,37 @@ function mapStateToProps(state) {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    marginLeft: 16,
+    marginRight: 16,
+  },
   input: {
     height: 52,
     fontSize: 16,
+  },
+  error: {
+    backgroundColor: '#F5F5F5',
+    color: '#D50000',
+    padding: 8,
   },
 });
 
 // TODO add loader
 const SearchArticle =
     ({ url, isFetching, error, dispatch }) => (
-      <View>
-        {error ? <Text>{error}</Text> : null}
-        <TextInput style={styles.input} returnKeyType="done" value={url} onChange={event => dispatch(actions.updateUrlValue(event.nativeEvent.text))} />
-        <Button onPress={() => parse(url, dispatch)} title="Rechercher" disabled={isFetching || !url} />
+      <View style={styles.container}>
+        <TextInput
+          style={styles.input}
+          returnKeyType="done"
+          placeholder="Url du flux"
+          value={url}
+          autoCorrect={false}
+          onChange={event => dispatch(actions.updateUrlValue(event.nativeEvent.text))}
+        />
+        <Button
+          onPress={() => parse(url, dispatch)} title="Rechercher" disabled={isFetching || !url}
+        />
+        {error ? <Text style={styles.error}>{error}</Text> : null}
       </View>
     );
 

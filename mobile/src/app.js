@@ -29,7 +29,7 @@ export default function run() {
   const App = () => (
     <Provider store={store}>
       <View style={styles.main}>
-        <StatusBar backgroundColor="transparent" animated translucent barStyle="dark-content" />
+        <StatusBar backgroundColor="#f0f0f0" animated barStyle="dark-content" />
         <Router>
           <Scene key="root">
             <Scene key="home" initial component={Home} title="Feed RSS" />

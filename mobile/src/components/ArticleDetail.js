@@ -25,31 +25,42 @@ const styles = StyleSheet.create({
     marginLeft: 16,
     marginRight: 16,
   },
+  title: {
+    color: 'rgba(0, 0, 0, 0.87)',
+    fontWeight: 'bold',
+    fontSize: 24,
+    marginTop: 16,
+    marginBottom: 16,
+  },
+  meta: {
+    marginBottom: 16,
+  },
+  summary: {
+    color: 'rgba(0, 0, 0, 0.87)',
+    fontSize: 16,
+  },
 });
 
 const ArticleDetail =
     ({ article: { title, link: { href }, updated, summary, author: { name, uri } } }) => (
       <ScrollView style={styles.view}>
         <TouchableOpacity onPress={() => web(href)}>
-          <Text>{title}</Text>
+          <Text style={styles.title}>{title}</Text>
         </TouchableOpacity>
-        <View>
+        <View style={styles.meta}>
           <Text>Auteur : </Text>
           <TouchableOpacity onPress={() => web(uri)}>
             <Text>{name}</Text>
           </TouchableOpacity>
         </View>
-        <View>
+        <View style={styles.meta}>
           <Text>Date de mise à jour : </Text>
           <Text>{updated}</Text>
         </View>
         <View>
-          <Text>Sommaire : </Text>
-          <Text>{summary}</Text>
+          <Text>Résumé : </Text>
+          <Text style={styles.summary}>{summary}</Text>
         </View>
-        <TouchableOpacity onPress={() => Actions.home()}>
-          <Text>Retour</Text>
-        </TouchableOpacity>
       </ScrollView>
     );
 

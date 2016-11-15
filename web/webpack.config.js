@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const buffer = require('buffer').Buffer;
 
 module.exports = {
   entry: {
@@ -23,6 +22,10 @@ module.exports = {
   },
   module: {
     loaders: [{
+      test: /\.scss$/,
+      loaders: ['style', 'css', 'sass'],
+    },
+    {
       test: /\.html$/,
       loader: 'file?name=[name].[ext]',
     }, {
@@ -33,9 +36,5 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.ProvidePlugin({
-      Buffer: 'buffer',
-      'window.Buffer': 'buffer',
-    }),
   ],
 };

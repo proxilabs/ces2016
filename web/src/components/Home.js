@@ -7,13 +7,9 @@ import ArticleList from './ArticleList';
 
 const Home =
     () => (
-      <div>
-        <h1>Feed RSS</h1>
-
+      <div className="app__content">
         <SearchArticle />
-
         <ArticleList />
-
       </div>
     );
 
