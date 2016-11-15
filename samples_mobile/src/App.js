@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 
 function App() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center' }}>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text style={{ color: 'red', fontSize: 32 }}>Hello React Native</Text>
     </View>
   );
