@@ -14,13 +14,11 @@ const styles = StyleSheet.create({
   item: {
     flexDirection: 'row',
     height: 52,
+    borderBottomWidth: 1,
+    borderColor: 'rgba(0, 0, 0, 0.12)',
   },
-  content: {
-    flex: 11,
-  },
-  icon: {
-    flex: 1,
-    justifyContent: 'flex-start',
+  text: {
+    margin: 16,
   },
 });
 
@@ -30,8 +28,11 @@ const ArticleListItem =
         style={styles.item}
         onPress={() => Actions.articledetail({ articleId: article.id })}
       >
-        <Text style={styles.content}>{article.title}</Text>
-        <Text style={styles.icon}>></Text>
+        <Text
+          style={styles.text}
+          ellipsizeMode="tail"
+          numberOfLines={1}
+        >{article.title}</Text>
       </TouchableOpacity>
     );
 
