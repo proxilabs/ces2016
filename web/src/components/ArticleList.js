@@ -11,10 +11,10 @@ function mapStateToProps(state) {
 
 const ArticleList =
     ({ articles }) => (
-      <ul>
+      <ul className="articles">
         {
             articles.map(article => (
-              <li key={article.id}>
+              <li key={article.id} className="articles__item">
                 <Link to={`/article/${encodeURIComponent(article.id)}`}>{article.title}</Link>
               </li>
             ))

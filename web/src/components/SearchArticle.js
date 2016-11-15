@@ -17,15 +17,23 @@ function handleSubmit(event, dispatch, url) {
   parse(url, dispatch);
 }
 
-// TODO add loader
-
 const SearchArticle =
     ({ url, isFetching, error, dispatch }) => (
-      <form onSubmit={e => handleSubmit(e, dispatch, url)}>
-        {error ? <span className="error">{error}</span> : null}
-        <input type="text" autoFocus value={url} onChange={event => dispatch(actions.updateUrlValue(event.target.value))} />
-        <button type="submit" disabled={isFetching || !url}>Rechercher</button>
-      </form>
+      <div className="search">
+        <form onSubmit={e => handleSubmit(e, dispatch, url)} className="search__form">
+          <input
+            type="text"
+            className="search__input"
+            autoFocus
+            value={url}
+            onChange={event => dispatch(actions.updateUrlValue(event.target.value))}
+          />
+          <button className="search__button" type="submit" disabled={isFetching || !url}>
+            Rechercher
+          </button>
+        </form>
+        {error ? <span className="search__error">{error}</span> : null}
+      </div>
     );
 
 

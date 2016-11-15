@@ -10,6 +10,8 @@ import Home from './components/Home';
 import ArticleDetail from './components/ArticleDetail';
 import NoMatch from './components/NoMatch';
 
+import './assets/scss/app.scss';
+
 const store = createStore();
 
 render(
@@ -24,3 +26,7 @@ render(
   </Provider>,
   document.getElementById('root')
 );
+
+if (module.hot) {
+  module.hot.accept();
+}
