@@ -16,6 +16,10 @@ const styles = StyleSheet.create({
   title: {
     color: 'rgba(0,0,0,0.87)',
     fontSize: 16,
+    fontWeight: 'bold',
+  },
+  summary: {
+    color: 'rgba(0,0,0,0.54)',
   },
 });
 

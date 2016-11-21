@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { ListView, ActivityIndicator, View, StyleSheet, Text } from 'react-native';
+import { ListView, ActivityIndicator, View, StyleSheet, Text, Platform } from 'react-native';
 import ArticleListItem from './ArticleListItem';
 
 function mapStateToProps(state) {
@@ -24,7 +24,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   content: {
-    marginTop: 56,
+    ...Platform.select({
+      ios: {
+        marginTop: 64,
+      },
+      android: {
+        marginTop: 56,
+      },
+    }),
   },
   error: {
     color: '#D50000',
@@ -40,7 +47,7 @@ const ArticleList =
       :
       (isFetching ?
         <View style={styles.view}>
-          <ActivityIndicator size="large" color="#4CAF50" />
+          <ActivityIndicator size="large" color={Platform.OS === 'android' ? '#4CAF50' : 'rgba(0,0,0,0.54)'} />
         </View>
       :
       <ListView

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import moment from 'moment';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 import {
@@ -32,8 +32,13 @@ const styles = StyleSheet.create({
     marginTop: 16,
     marginBottom: 16,
   },
-  meta: {
+  metacontainer: {
+    flexDirection: 'row',
     marginBottom: 16,
+    justifyContent: 'space-between',
+  },
+  meta: {
+    color: 'rgba(0,0,0,0.54)',
   },
   summary: {
     color: 'rgba(0, 0, 0, 0.87)',
@@ -47,16 +52,11 @@ const ArticleDetail =
         <TouchableOpacity onPress={() => web(link)}>
           <Text style={styles.title}>{title}</Text>
         </TouchableOpacity>
-        <View style={styles.meta}>
-          <Text>Auteur : </Text>
-          <Text>{author}</Text>
-        </View>
-        <View style={styles.meta}>
-          <Text>Date de mise à jour : </Text>
-          <Text>{date}</Text>
+        <View style={styles.metacontainer}>
+          <Text style={styles.meta}>{author}</Text>
+          <Text style={styles.meta}>{moment(date).format('L')}</Text>
         </View>
         <View>
-          <Text>Résumé : </Text>
           <Text style={styles.summary}>{summary}</Text>
         </View>
       </ScrollView>
