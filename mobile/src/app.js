@@ -8,6 +8,9 @@ import { createStore } from 'shared';
 
 import Home from './components/Home';
 import ArticleDetail from './components/ArticleDetail';
+import ArticleList from './components/ArticleList';
+import SearchNavBar from './components/SearchNavBar';
+import DetailNavBar from './components/DetailNavBar';
 
 // On demande la création de notre store applicatif.
 const store = createStore();
@@ -29,11 +32,11 @@ export default function run() {
   const App = () => (
     <Provider store={store}>
       <View style={styles.main}>
-        <StatusBar backgroundColor="#f0f0f0" animated barStyle="dark-content" />
+        <StatusBar backgroundColor="#43A047" animated barStyle="light-content" />
         <Router>
           <Scene key="root">
-            <Scene key="home" initial component={Home} title="Feed RSS" />
-            <Scene key="articledetail" component={ArticleDetail} title="Article" />
+            <Scene key="home" navBar={SearchNavBar} initial component={ArticleList} />
+            <Scene key="articledetail" navBar={DetailNavBar} component={ArticleDetail} />
           </Scene>
         </Router>
       </View>

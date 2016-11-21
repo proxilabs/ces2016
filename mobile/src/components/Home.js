@@ -5,7 +5,6 @@ import {
     StyleSheet,
     View,
 } from 'react-native';
-
 import SearchArticle from './SearchArticle';
 import ArticleList from './ArticleList';
 

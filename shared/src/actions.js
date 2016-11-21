@@ -7,10 +7,10 @@ export function fetchArticlesRequest() {
 }
 
 
-export function fetchArticlesSuccess(feed) {
+export function fetchArticlesSuccess(items) {
   return {
     type: actions.FETCH_ARTICLES_SUCCESS,
-    feed,
+    items,
   };
 }
 

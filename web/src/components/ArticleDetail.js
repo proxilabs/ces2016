@@ -5,24 +5,24 @@ import { Link } from 'react-router';
 
 function mapStateToProps(state, props) {
   return {
-    article: state.articles.find(a => a.id === props.params.articleId) || {},
+    article: state.articles.find(a => a.guid === props.params.articleId) || {},
   };
 }
 
 const ArticleDetail =
-    ({ article: { title, link: { href }, updated, summary, author: { name, uri } } }) => (
+    ({ article: { title, link, date, summary, author } }) => (
       <div className="app__content article">
         <Link to="/">Retour</Link>
         <h1 className="article__title">
-          <a href={href} rel="noopener noreferrer" target="_blank">{title}</a>
+          <a href={link} rel="noopener noreferrer" target="_blank">{title}</a>
         </h1>
         <div className="article__meta">
           <span>Auteur : </span>
-          <span><a href={uri} rel="noopener noreferrer" target="_blank">{name}</a></span>
+          <span>{author}</span>
         </div>
         <div className="article__meta">
           <span>Date de mise à jour : </span>
-          <span>{updated}</span>
+          <span>{date}</span>
         </div>
         <div className="article__summary">
           <span>Résumé : </span>
@@ -34,15 +34,10 @@ const ArticleDetail =
 ArticleDetail.propTypes = {
   article: React.PropTypes.shape({
     title: React.PropTypes.string,
-    link: React.PropTypes.shape({
-      href: React.PropTypes.string,
-    }),
-    updated: React.PropTypes.string,
+    link: React.PropTypes.string,
+    date: React.PropTypes.date,
     summary: React.PropTypes.string,
-    author: React.PropTypes.shape({
-      name: React.PropTypes.string,
-      uri: React.PropTypes.string,
-    }),
+    author: React.PropTypes.string,
   }),
 };
 

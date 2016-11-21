@@ -99,8 +99,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    // eslint-disable-next-line no-undef
 	    fetch('http://localhost:3001/?url=' + url).then(function (r) {
 	      return r.json();
-	    }).then(function (feed) {
-	      return dispatch((0, _actions.fetchArticlesSuccess)(feed));
+	    }).then(function (items) {
+	      return dispatch((0, _actions.fetchArticlesSuccess)(items));
 	    }).catch(function (error) {
 	      return dispatch((0, _actions.fetchArticlesError)(error));
 	    });
@@ -135,10 +135,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	  };
 	}
 	
-	function fetchArticlesSuccess(feed) {
+	function fetchArticlesSuccess(items) {
 	  return {
 	    type: actions.FETCH_ARTICLES_SUCCESS,
-	    feed: feed
+	    items: items
 	  };
 	}
 	
@@ -12588,7 +12588,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      });
 	    case actions.FETCH_ARTICLES_SUCCESS:
 	      return _extends({}, state, {
-	        articles: action.feed.items,
+	        articles: action.items,
 	        isFetching: false
 	      });
 	    case actions.FETCH_ARTICLES_ERROR:

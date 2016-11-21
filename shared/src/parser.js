@@ -15,7 +15,7 @@ export default function (url, dispatch) {
     // eslint-disable-next-line no-undef
     fetch(`http://localhost:3001/?url=${url}`)
       .then(r => r.json())
-      .then(feed => dispatch(fetchArticlesSuccess(feed)))
+      .then(items => dispatch(fetchArticlesSuccess(items)))
       .catch(error => dispatch(fetchArticlesError(error)));
   });
 }
