@@ -7,7 +7,11 @@ import cors from 'cors';
 
 const cacheFolder = './cache';
 
-fs.mkdirSync(cacheFolder);
+try {
+  fs.mkdirSync(cacheFolder);
+} catch(e) {
+  console.info(e.message);
+}
 
 const app = express();
 

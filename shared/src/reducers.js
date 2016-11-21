@@ -18,7 +18,7 @@ const article = (state = initialState, action) => {
     case actions.FETCH_ARTICLES_SUCCESS:
       return {
         ...state,
-        articles: action.feed.items,
+        articles: action.items,
         isFetching: false,
       };
     case actions.FETCH_ARTICLES_ERROR:

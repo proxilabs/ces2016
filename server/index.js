@@ -74,7 +74,11 @@
 
 	var cacheFolder = './cache';
 
-	_fs2.default.mkdirSync(cacheFolder);
+	try {
+	  _fs2.default.mkdirSync(cacheFolder);
+	} catch (e) {
+	  console.info(e.message);
+	}
 
 	var app = (0, _express2.default)();
 

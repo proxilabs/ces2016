@@ -16,7 +16,7 @@ const ArticleList =
           {
               articles.map(article => (
                 <li key={article.id} className="articles__item">
-                  <Link to={`/article/${encodeURIComponent(article.id)}`}>{article.title}</Link>
+                  <Link to={`/article/${encodeURIComponent(article.guid)}`}>{article.title}</Link>
                 </li>
               ))
           }
