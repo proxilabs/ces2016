@@ -14,7 +14,7 @@ import { web } from 'react-native-communications';
 
 function mapStateToProps(state, props) {
   return {
-    article: state.articles.find(a => a.id === props.navigationState.articleId) || {},
+    article: state.articles.find(a => a.guid === props.navigationState.articleId) || {},
   };
 }
 
@@ -42,20 +42,18 @@ const styles = StyleSheet.create({
 });
 
 const ArticleDetail =
-    ({ article: { title, link: { href }, updated, summary, author: { name, uri } } }) => (
+    ({ article: { title, link, date, summary, author } }) => (
       <ScrollView style={styles.view}>
-        <TouchableOpacity onPress={() => web(href)}>
+        <TouchableOpacity onPress={() => web(link)}>
           <Text style={styles.title}>{title}</Text>
         </TouchableOpacity>
         <View style={styles.meta}>
           <Text>Auteur : </Text>
-          <TouchableOpacity onPress={() => web(uri)}>
-            <Text>{name}</Text>
-          </TouchableOpacity>
+          <Text>{author}</Text>
         </View>
         <View style={styles.meta}>
           <Text>Date de mise à jour : </Text>
-          <Text>{updated}</Text>
+          <Text>{date}</Text>
         </View>
         <View>
           <Text>Résumé : </Text>
@@ -67,15 +65,10 @@ const ArticleDetail =
 ArticleDetail.propTypes = {
   article: React.PropTypes.shape({
     title: React.PropTypes.string,
-    link: React.PropTypes.shape({
-      href: React.PropTypes.string,
-    }),
-    updated: React.PropTypes.string,
+    link: React.PropTypes.string,
+    date: React.PropTypes.date,
     summary: React.PropTypes.string,
-    author: React.PropTypes.shape({
-      name: React.PropTypes.string,
-      uri: React.PropTypes.string,
-    }),
+    author: React.PropTypes.string,
   }),
 };
 

@@ -9,7 +9,7 @@ const cacheFolder = './cache';
 
 try {
   fs.mkdirSync(cacheFolder);
-} catch(e) {
+} catch (e) {
   console.info(e.message);
 }
 
