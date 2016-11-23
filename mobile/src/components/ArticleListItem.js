@@ -1,10 +1,6 @@
 import React from 'react';
 import { Actions } from 'react-native-router-flux';
-import {
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-} from 'react-native';
+import { StyleSheet, Text, View, TouchableNativeFeedback, TouchableOpacity, Platform } from 'react-native';
 
 const styles = StyleSheet.create({
   item: {
@@ -23,23 +19,26 @@ const styles = StyleSheet.create({
   },
 });
 
+const Touchable = Platform.OS === 'android' ? TouchableNativeFeedback : TouchableOpacity;
+
 const ArticleListItem =
     article => (
-      <TouchableOpacity
-        style={styles.item}
+      <Touchable
         onPress={() => Actions.articledetail({ articleId: article.guid })}
       >
-        <Text
-          style={styles.title}
-          ellipsizeMode="tail"
-          numberOfLines={1}
-        >{article.title}</Text>
-        <Text
-          style={styles.summary}
-          ellipsizeMode="tail"
-          numberOfLines={1}
-        >{article.summary}</Text>
-      </TouchableOpacity>
+        <View style={styles.item}>
+          <Text
+            style={styles.title}
+            ellipsizeMode="tail"
+            numberOfLines={1}
+          >{article.title}</Text>
+          <Text
+            style={styles.summary}
+            ellipsizeMode="tail"
+            numberOfLines={1}
+          >{article.summary}</Text>
+        </View>
+      </Touchable>
     );
 
 export default ArticleListItem;

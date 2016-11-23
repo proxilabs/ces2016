@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import { Scene, Router } from 'react-native-router-flux';
 import { StatusBar, StyleSheet, View, Platform } from 'react-native';
 import { createStore } from 'shared';
-import Home from './components/Home';
 import ArticleDetail from './components/ArticleDetail';
 import ArticleList from './components/ArticleList';
 import SearchNavBar from './components/SearchNavBar';
