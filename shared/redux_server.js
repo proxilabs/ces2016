@@ -1,3 +1,3 @@
 const remotedev = require('remotedev-server');
 
-remotedev({ hostname: 'localhost', port: 9001 });
+remotedev({ hostname: 'localhost', port: 9999 });
