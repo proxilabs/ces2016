@@ -13,7 +13,7 @@ export default function (url, dispatch) {
     console.info(`Fetching feeds for ${url}`);
 
     // eslint-disable-next-line no-undef
-    fetch(`http://localhost:3001/?url=${url}`)
+    fetch(`http://192.168.1.90:3001/?url=${url}`)
       .then(r => r.json())
       .then(items => dispatch(fetchArticlesSuccess(items)))
       .catch(error => dispatch(fetchArticlesError(error)));

@@ -2,7 +2,7 @@ import React from 'react';
 
 class Button1 extends React.Component {
   componentWillMount() {
-    console.info('A button has appeared');
+    console.info('A button sauvage appraît');
   }
 
   componentWillUnmount() {

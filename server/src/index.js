@@ -55,4 +55,4 @@ app.get('/', (req, res) => {
   }
 });
 
-app.listen(3001, () => console.info('Listening on port 3001'));
+app.listen(3001, '192.168.1.90', () => console.info('Listening on port 3001'));
