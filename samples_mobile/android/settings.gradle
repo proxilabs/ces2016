@@ -1,3 +1,0 @@
-rootProject.name = 'samples_mobile'
-
-include ':app'

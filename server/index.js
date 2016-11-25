@@ -136,7 +136,7 @@
 	  }
 	});
 
-	app.listen(3001, '192.168.1.90', function () {
+	app.listen(3001, function () {
 	  return console.info('Listening on port 3001');
 	});
 
